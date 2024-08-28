@@ -15,7 +15,7 @@ const ackHandler = net.createServer((socket) => {
 
 
   socket.on('data', (data) => {  
-    console.log('target client received: ', data.toString());
+    console.log('ack handler received: ', data.toString());
     myObj = JSON.parse(data);
     var cmdMap = new Map(Object.entries(myObj));
     console.log('commandMap: ', cmdMap);
