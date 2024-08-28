@@ -23,8 +23,8 @@ const ackHandler = net.createServer((socket) => {
     // once data is received save to command history collection
     
     const respData = {
-      "cmd_id": commandMap.get("cmd_id"),
-      "time_sent" : commandMap.get("time_sent")
+      "cmd_id": cmdMap.get("cmd_id"),
+      "time_sent" : cmdMap.get("time_sent")
     };
 
     saveData(respData);
@@ -37,7 +37,7 @@ ackHandler.on('error', (err) => {
 });
 
 ackHandler.listen(3006, () => {
-  console.log('target client waiting for connection...'); 
+  console.log('ack handler waiting for connection...'); 
 });
 
 
